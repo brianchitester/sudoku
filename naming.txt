@@ -1,0 +1,60 @@
+/*****************************************************/
+/*****************************************************/
+/***things to consider in naming square on the grid***/
+/*****************************************************/
+/*****************************************************/
+
+publish on blog and cite myself as a ref
+//imporve wikipedia page!!!
+http://en.wikipedia.org/wiki/Algorithmics_of_sudoku
+
+constructor - Vertex
+
+"locked" - the index is locked condition: 1 item in list.
+"unlocked" - the index has more than one item.
+//test with and without short and compare results
+"short" - the index has < 3 items.
+<x, y, z> - pair of coordinates + z index for sub square.
+<"x locked", "y locked", "z locked"> - row solved, column solved, square solved.
+
+BACKTRACKING AI - CODENAME: HOTSTREAK
+backtrack on fresh board
+keep track of how many successful hits you have as you examine "locked" squares
+using some type of distrubution, "like...Higgs or something", after that many fails, run backtracking
+
+the theory is that,  
+
+one algo iterates sets x, y, and z +/-
+the other iterates w/ wrap around through solved squares +/-
+
+graph results - 3 lines
+switch between when one becomes worse than the other
+run each by itself
+
+hypothesis - switching will be the best (lets hope so, im writing both!)
+
+
+for (y = 0; y < 9; y++){
+	for (x = 0; x < 9; x++){
+		//set everything and add to...array? "x"."y"."z"
+		if (x < 3 && y < 3){
+			z = 0
+		}
+		//8 more...
+	}
+}
+
+
+_____________
+|		|		|		|
+|___|___|___|
+|   |   |   |
+|___|___|___|
+|		|		|		|
+|___|___|___|_____________
+|		|		|		|
+|___|___|___|
+|   |   |   |
+|___|___|___|
+|		|		|		|
+|___|___|___|

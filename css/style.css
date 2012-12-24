@@ -1,0 +1,76 @@
+header{
+	text-align:center;
+	display:block;
+	margin-bottom:20px;
+	margin-right: 20px;
+}
+
+h1{
+	font-size:70px;
+	line-height: 70px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin:auto;
+}
+
+
+/* styles for sudoku table */
+.d0, .s0, .u0, .w0, .v0 {
+	background-color: transparent;
+}
+.s0, .s1, .s2, .s3 {
+	font-size: 18pt;
+	font-family: times,"times new roman",serif;
+	color: black;
+}
+.d0, .d1, .d2, .d3, .s0, .s1, .s2, .s3, .u0, .u1, .u2, .u3, .w0, .w1, .w2, .w3, .v0, .v1, .v2, .v3 {
+	-webkit-appearance: none;
+	outline: none;
+	border: solid 0 white;
+	text-align: center;
+	margin: 0;
+	width: 24pt;
+}
+.c0, .e0, .f0, .g0, .h0, .i0 {
+	border: #DDE solid 1px;
+}
+.c0, .c1, .c2, .c3, .e0, .e1, .e2, .e3, .f0, .f1, .f2, .f3, .g0, .g1, .g2, .g3, .h0, .h1, .h2, .h3, .i0, .i1, .i2, .i3 {
+	width: 24pt;
+	height: 25pt;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 18pt;
+	font-family: times,serif;
+}
+.f0, .f1, .f2, .f3, .g0, .g1, .g2, .g3 {
+	border-top: #669 solid 2px;
+}
+.e0, .e1, .e2, .e3, .g0, .g1, .g2, .g3, .i0, .i1, .i2, .i3 {
+	border-left: #669 solid 2px;
+}
+.h0,.h1,.h2,.h3,.i0,.i1,.i2,.i3 {
+	border-bottom: #669 solid 2px;
+}
+.t {
+	border-collapse:collapse; 
+	background-color:#FFFFFF; 
+	border-right: #666699 solid 2px;
+	margin:20px auto;
+}
+
+table, td {
+	padding: 0pt;
+}
+input[type=text]{
+	width: 24pt;
+	height: 25pt;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 18pt;
+	font-family: times,serif;
+}
+#submit{
+	display:block;
+	margin:auto;
+}
+
+
