@@ -1,12 +1,42 @@
 <?php
 class Sudoku
 {
-		//store pointers to each vertex sorted by x y and z?
-		//pass by referance &$
 		public $s = []; //main array
-		public $x = [];
-		public $y = [];
-		public $z = [];
+
+		//x, y, and z lookup tables
+		public $x = [
+			0 => [],
+			1 => [],
+			2 => [],
+			3 => [],
+			4 => [],
+			5 => [],
+			6 => [],
+			7 => [],
+			8 => [],
+		];
+		public $y = [
+			0 => [],
+			1 => [],
+			2 => [],
+			3 => [],
+			4 => [],
+			5 => [],
+			6 => [],
+			7 => [],
+			8 => [],
+		];
+		public $z = [
+			0 => [],
+			1 => [],
+			2 => [],
+			3 => [],
+			4 => [],
+			5 => [],
+			6 => [],
+			7 => [],
+			8 => [],
+		];
 }
 
 class Vertex
@@ -89,8 +119,13 @@ function init($S){
 			
 			//add to master array
 			array_push($S->s, $V);
-			//need to figure out pass by referance error
-			array_push($S->x, &$S->s[0]);
+
+			//s index - sizeof($S->s)-1;
+
+			//add to x, y, and z lookup tables
+			array_push($S->x[$x], sizeof($S->s)-1);
+			array_push($S->y[$y], sizeof($S->s)-1);
+			array_push($S->z[$z], sizeof($S->s)-1);
 			
 
 		}
@@ -100,6 +135,13 @@ function init($S){
 
 $S = new Sudoku;
 init($S);
+
+/*print first row - y = 0
+foreach($S->y[0] as $vert){
+	echo $S->s[$vert]->value;
+	echo "<br><br>";
+}
+*/
 
 ?>
 
