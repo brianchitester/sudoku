@@ -42,7 +42,7 @@ class Sudoku
 class Vertex
 {
 		public $value = 0;
-    //public $locked = TRUE; not needed, just check if possible has only one item
+    //public $locked = TRUE; not needed, just check if value is 1-9
     public $short = FALSE;
     public $x = 0;
 		public $y = 0;
@@ -126,11 +126,49 @@ function init($S){
 			array_push($S->x[$x], sizeof($S->s)-1);
 			array_push($S->y[$y], sizeof($S->s)-1);
 			array_push($S->z[$z], sizeof($S->s)-1);
-			
-
 		}
 	}
 	echo $S->s[0]->value;
+}
+
+function isSolved($S){ //crude check makes a lot of assumtions, more like isFull
+	foreach($S->s as $V){
+		if ($V->value == 0){ //if value has not been set
+			return FALSE;
+		}
+	}
+	return TRUE; //true if all values are set
+}
+
+//1. consider writing general "check" function instead
+function checkNeighbors($S, $V){
+	if ($V->value != 0){
+		
+		//1.//check x
+		foreach($S->x[$V->x] as $n){
+			if (array_key_exists($V->value, $S->s[$n]->possible)){
+				unset($S->s[$n]->possible[$V->value]);
+			} 
+			if (sizeof($S->s[$n]->possible) < 3){
+				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
+					reset($S->s[$n]->possible);
+					$S->s[$n]->value = current($array);
+				}
+				else {
+					$S->s[$n]->short = TRUE;
+				}
+			}
+		}
+		//check y
+		
+		//check z
+	}
+}
+
+function solve($S){
+	$i = 0;
+	while(!isSolved($S)){
+	}
 }
 
 $S = new Sudoku;
