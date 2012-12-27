@@ -41,8 +41,7 @@ class Sudoku
 		public $locked = [];
 }
 
-class Vertex
-{
+class Vertex{
 		public $value = 0;
 		public $sindex = 0;
     public $short = FALSE;
@@ -57,12 +56,6 @@ class Vertex
 		public $possible = [
 			1, 2, 3, 4, 5, 6, 7, 8, 9,
 		];
-		
-		
-		public function setShort($s){
-			$this->$short = $s;
-		}
-    
 }
 
 function getZ($x, $y){
@@ -118,21 +111,26 @@ function init($S){
 			if (isset ($_POST[$name])){
 				$V->value = $_POST[$name];
 				$V->possible = array($V->value);
+				$V->short = TRUE;
 			}
 			
 			//add to master array
 			array_push($S->s, $V);
+			$sIndex = sizeof($S->s)-1;
 
-			//s index - sizeof($S->s)-1;
+			//set s index in vertex
+			$V->sindex = $sIndex;
+
+			if (isset ($_POST[$name])){
+				array_push($S->locked, $V->sindex);
+			}
 
 			//add to x, y, and z lookup tables
-			array_push($S->x[$x], sizeof($S->s)-1);
-			array_push($S->y[$y], sizeof($S->s)-1);
-			array_push($S->z[$z], sizeof($S->s)-1);
-			//set s index in each vertex
+			array_push($S->x[$x], $sIndex);
+			array_push($S->y[$y], $sIndex);
+			array_push($S->z[$z], $sIndex);
 		}
 	}
-	echo $S->s[0]->value;
 }
 
 function isSolved($S){ //crude check makes a lot of assumtions, more like isFull
@@ -145,43 +143,141 @@ function isSolved($S){ //crude check makes a lot of assumtions, more like isFull
 }
 
 //1. consider writing general "check" function instead
+//**************edit short definition here********
 function checkNeighbors($S, $V){
+	$hit = 0;
+	$short = 0;
+	$hitshort = [];
 	if ($V->value != 0){
 		
-		//1.//check x
+		//check x
 		foreach($S->x[$V->x] as $n){
 			if (array_key_exists($V->value, $S->s[$n]->possible)){
 				unset($S->s[$n]->possible[$V->value]);
 			} 
-			if (sizeof($S->s[$n]->possible) < 3){
+			if (sizeof($S->s[$n]->possible) < 3){ //**************edit short definition here x 3
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
-					$S->s[$n]->value = current($array);
-					array_push($S->locked, $V->);
+					$S->s[$n]->value = current($S->s[$n]->possible);
+					array_push($S->locked, $V->sindex);
+					$hit++;
 				}
 				else {
 					$S->s[$n]->short = TRUE;
+					$short++;
 				}
 			}
 		}
 		//check y
+		foreach($S->y[$V->y] as $n){
+			if (array_key_exists($V->value, $S->s[$n]->possible)){
+				unset($S->s[$n]->possible[$V->value]);
+			} 
+			if (sizeof($S->s[$n]->possible) < 3){  //**************edit short definition here x 3
+				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
+					reset($S->s[$n]->possible);
+					$S->s[$n]->value = current($S->s[$n]->possible);
+					array_push($S->locked, $V->sindex);
+					$hit++;
+				}
+				else {
+					$S->s[$n]->short = TRUE;
+					$short++;
+				}
+			}
+		}
 		
 		//check z
+		foreach($S->z[$V->z] as $n){
+			if (array_key_exists($V->value, $S->s[$n]->possible)){
+				unset($S->s[$n]->possible[$V->value]);
+			} 
+			if (sizeof($S->s[$n]->possible) < 3){  //**************edit short definition here x 3
+				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
+					reset($S->s[$n]->possible);
+					$S->s[$n]->value = current($S->s[$n]->possible);
+					array_push($S->locked, $V->sindex);
+					$hit++;
+				}
+				else {
+					$S->s[$n]->short = TRUE;
+					$short++;
+				}
+			}
+		}
 	}
+	array_push($hitshort, $hit);
+	array_push($hitshort, $short);
+	return $hitshort;
 }
 
 
-//sudo code
 function solve($S){
+	//puzzle is solved when locked array contains 81 elements
+	$active = TRUE;
 	$i = 0;
-	while(!isSolved($S)){
-		check($S->
+	$totalhit = sizeof($S->locked)-1;
+	$totalshort = sizeof($S->locked)-1;
+
+	while($active){
+		//set $V to each locked vertex
+		$V = $S->s[$S->locked[$i]];
 		
+		
+		$hitshort = checkNeighbors($S, $V); //number of $Vs locked "hit" and number of $Vs shorted
+		echo "hit: $hitshort[0]";
+		echo "short: $hitshort[1]";
+		$totalhit += $hitshort[0];
+		$totalshort += $hitshort[1];
+		echo "totalhit: $totalhit";
+		echo "totalshort: $totalshort";
+		//from this, we should be able to determine a "hit score" and "short score", as we progress through the
+		//need to compile all echo data into graphical output
+	
+		//total short must have some threshold where backtracking becomes necesary
+		//at this point, we have the check neighbors infinitely algo which should work on its own
+		//we need to wrap up this code and thest if checkneighbors is enough to solve the sudoku
+
+		//html output:
+		
+		
+
+		//reset conditions
+		if($i < 80){
+			if( $i = sizeof($S->locked)-1){
+				$i=0;
+			}
+			else{
+				$i++;
+			}
+		}
+		else{
+			$active = FALSE; //end
+			echo "DONE";
+		}
+		
+	}	
+
+
+while(sizeof($S->locked) != 81){
+		$i=0;
+		while($i < sizeof($S->locked)-1){  //main loop
+			
+
+			//reset condiition
+			if( $i = sizeof($S->locked)-2){
+				$i=0;
+			}
+			else{
+				$i++;
+			}
+		}
 	}
 }
 
 $S = new Sudoku;
 init($S);
+solve($S);
 
 /*print first row - y = 0
 foreach($S->y[0] as $vert){
