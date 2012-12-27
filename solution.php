@@ -37,12 +37,14 @@ class Sudoku
 			7 => [],
 			8 => [],
 		];
+		//indexs of locked vertexes
+		public $locked = [];
 }
 
 class Vertex
 {
 		public $value = 0;
-    //public $locked = TRUE; not needed, just check if value is 1-9
+		public $sindex = 0;
     public $short = FALSE;
     public $x = 0;
 		public $y = 0;
@@ -55,6 +57,7 @@ class Vertex
 		public $possible = [
 			1, 2, 3, 4, 5, 6, 7, 8, 9,
 		];
+		
 		
 		public function setShort($s){
 			$this->$short = $s;
@@ -126,6 +129,7 @@ function init($S){
 			array_push($S->x[$x], sizeof($S->s)-1);
 			array_push($S->y[$y], sizeof($S->s)-1);
 			array_push($S->z[$z], sizeof($S->s)-1);
+			//set s index in each vertex
 		}
 	}
 	echo $S->s[0]->value;
@@ -153,6 +157,7 @@ function checkNeighbors($S, $V){
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($array);
+					array_push($S->locked, $V->);
 				}
 				else {
 					$S->s[$n]->short = TRUE;
@@ -165,9 +170,13 @@ function checkNeighbors($S, $V){
 	}
 }
 
+
+//sudo code
 function solve($S){
 	$i = 0;
 	while(!isSolved($S)){
+		check($S->
+		
 	}
 }
 
