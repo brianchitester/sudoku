@@ -111,6 +111,7 @@ function getZ($x, $y){
 }
 
 function init($S){
+	$val = 0;
 	for ($y = 0; $y < 9; $y++){
 		for ($x = 0; $x < 9; $x++){
 			//set everything and add to array? "x"."y"."z"
@@ -139,7 +140,8 @@ function init($S){
 			//set s index in vertex
 			$V->sindex = $sIndex;
 
-			if (isset ($_POST[$name])){
+			//add to locked
+			if($val > 0 && $val < 10){
 				array_push($S->locked, $V->sindex);
 			}
 
@@ -191,8 +193,10 @@ function checkNeighbors($S, $V){
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
-					array_push($S->locked, $V->sindex);
-					$hit++;
+					if(!in_array($V->sindex, $S->locked)){
+						array_push($S->locked, $V->sindex);
+						$hit++;
+					}
 				}
 			}
 		}
@@ -210,8 +214,10 @@ function checkNeighbors($S, $V){
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
-					array_push($S->locked, $V->sindex);
-					$hit++;
+					if(!in_array($V->sindex, $S->locked)){
+						array_push($S->locked, $V->sindex);
+						$hit++;
+					}
 				}
 			}
 		}
@@ -230,8 +236,10 @@ function checkNeighbors($S, $V){
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
-					array_push($S->locked, $V->sindex);
-					$hit++;
+					if(!in_array($V->sindex, $S->locked)){
+						array_push($S->locked, $V->sindex);
+						$hit++;
+					}
 				}
 			}
 		}
@@ -252,6 +260,8 @@ function solve($S){
 	while($active){
 		//set $V to each locked vertex
 		$V = $S->s[$S->locked[$i]];
+		$woo = sizeof($S->locked)-1;
+		echo "<h1>$woo</h1>";
 		
 		
 		$hitshort = checkNeighbors($S, $V); //number of $Vs locked "hit" and number of $Vs shorted
@@ -272,7 +282,9 @@ function solve($S){
 
 		//html output:
 		
-		
+		if ($i == 12){
+			printS($S);
+		}
 
 		//reset conditions
 		if($i < 80){
@@ -288,36 +300,12 @@ function solve($S){
 			echo "DONE <br>";
 			printS($S);
 		}
-		
 	}	
-
-
-while(sizeof($S->locked) != 81){
-		$i=0;
-		while($i < sizeof($S->locked)-1){  //main loop
-			
-
-			//reset condiition
-			if( $i = sizeof($S->locked)-2){
-				$i=0;
-			}
-			else{
-				$i++;
-			}
-		}
-	}
 }
 
 $S = new Sudoku;
 init($S);
 solve($S);
-
-/*print first row - y = 0
-foreach($S->y[0] as $vert){
-	echo $S->s[$vert]->value;
-	echo "<br><br>";
-}
-*/
 
 ?>
 
