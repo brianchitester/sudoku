@@ -152,56 +152,56 @@ function checkNeighbors($S, $V){
 		
 		//check x
 		foreach($S->x[$V->x] as $n){
-			if (array_key_exists($V->value, $S->s[$n]->possible)){
+			if (in_array($V->value, $S->s[$n]->possible)){
 				unset($S->s[$n]->possible[$V->value]);
+$derp = sizeof($S->s[$n]->possible);
+$cur = current($S->s[$n]->possible);
+				echo "derp $derp <br>";
+				echo "current $cur <br>";
 			} 
 			if (sizeof($S->s[$n]->possible) < 3){ //**************edit short definition here x 3
+				$S->s[$n]->short = TRUE;
+				$short++;
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
 					array_push($S->locked, $V->sindex);
 					$hit++;
-				}
-				else {
-					$S->s[$n]->short = TRUE;
-					$short++;
 				}
 			}
 		}
 		//check y
 		foreach($S->y[$V->y] as $n){
-			if (array_key_exists($V->value, $S->s[$n]->possible)){
+			if (in_array($V->value, $S->s[$n]->possible)){
 				unset($S->s[$n]->possible[$V->value]);
+				echo "derp <br>";
 			} 
 			if (sizeof($S->s[$n]->possible) < 3){  //**************edit short definition here x 3
+				$S->s[$n]->short = TRUE;
+				$short++;
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
 					array_push($S->locked, $V->sindex);
 					$hit++;
-				}
-				else {
-					$S->s[$n]->short = TRUE;
-					$short++;
 				}
 			}
 		}
 		
 		//check z
 		foreach($S->z[$V->z] as $n){
-			if (array_key_exists($V->value, $S->s[$n]->possible)){
+			if (in_array($V->value, $S->s[$n]->possible)){
 				unset($S->s[$n]->possible[$V->value]);
+				echo "derp <br>";
 			} 
 			if (sizeof($S->s[$n]->possible) < 3){  //**************edit short definition here x 3
+				$S->s[$n]->short = TRUE;
+				$short++;
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
 					array_push($S->locked, $V->sindex);
 					$hit++;
-				}
-				else {
-					$S->s[$n]->short = TRUE;
-					$short++;
 				}
 			}
 		}
@@ -225,12 +225,14 @@ function solve($S){
 		
 		
 		$hitshort = checkNeighbors($S, $V); //number of $Vs locked "hit" and number of $Vs shorted
-		echo "hit: $hitshort[0]";
-		echo "short: $hitshort[1]";
+		echo "i: $i <br>";
+		echo "hit: $hitshort[0] <br>";
+		echo "short: $hitshort[1] <br>";
 		$totalhit += $hitshort[0];
 		$totalshort += $hitshort[1];
-		echo "totalhit: $totalhit";
-		echo "totalshort: $totalshort";
+		echo "totalhit: $totalhit <br>";
+		echo "totalshort: $totalshort <br>";
+		echo "<br>";
 		//from this, we should be able to determine a "hit score" and "short score", as we progress through the
 		//need to compile all echo data into graphical output
 	
@@ -244,7 +246,7 @@ function solve($S){
 
 		//reset conditions
 		if($i < 80){
-			if( $i = sizeof($S->locked)-1){
+			if( $i == sizeof($S->locked)-1){
 				$i=0;
 			}
 			else{
