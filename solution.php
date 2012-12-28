@@ -58,6 +58,21 @@ class Vertex{
 		];
 }
 
+function printS($S){
+	$i = 0;
+	$count = 0;
+	while($i < 81){
+		$v = $S->s[$i]->value;
+		echo "$v ";
+		$count++;
+		if ($count == 9){
+			echo "<br>";
+			$count = 0;
+		}
+		$i++;
+	}
+}
+
 function getZ($x, $y){
 	if ($y < 3){
 		if ($x < 3){
@@ -109,9 +124,12 @@ function init($S){
 
 			//if value is set
 			if (isset ($_POST[$name])){
-				$V->value = $_POST[$name];
-				$V->possible = array($V->value);
-				$V->short = TRUE;
+				$val = (is_numeric($_POST[$name]) ? (int)$_POST[$name] : 0); //convert to int
+				if($val > 0 && $val < 10){
+					$V->value = $val;
+					$V->possible = array($V->value);
+					$V->short = TRUE;
+				}
 			}
 			
 			//add to master array
@@ -143,6 +161,7 @@ function isSolved($S){ //crude check makes a lot of assumtions, more like isFull
 }
 
 //1. consider writing general "check" function instead
+//must add lock check
 //**************edit short definition here********
 function checkNeighbors($S, $V){
 	$hit = 0;
@@ -152,16 +171,23 @@ function checkNeighbors($S, $V){
 		
 		//check x
 		foreach($S->x[$V->x] as $n){
+			echo "n $n <br>";
+			foreach($S->s[$n]->possible as $p){
+				echo "p $p ";
+			}
+			echo "<br>";
 			if (in_array($V->value, $S->s[$n]->possible)){
 				unset($S->s[$n]->possible[$V->value]);
-$derp = sizeof($S->s[$n]->possible);
-$cur = current($S->s[$n]->possible);
+				$derp = sizeof($S->s[$n]->possible);
+				$cur = current($S->s[$n]->possible);
 				echo "derp $derp <br>";
 				echo "current $cur <br>";
 			} 
 			if (sizeof($S->s[$n]->possible) < 3){ //**************edit short definition here x 3
-				$S->s[$n]->short = TRUE;
-				$short++;
+				if ($S->s[$n]->short == FALSE){
+					$S->s[$n]->short = TRUE;
+					$short++;
+				}
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
@@ -177,8 +203,10 @@ $cur = current($S->s[$n]->possible);
 				echo "derp <br>";
 			} 
 			if (sizeof($S->s[$n]->possible) < 3){  //**************edit short definition here x 3
-				$S->s[$n]->short = TRUE;
-				$short++;
+				if ($S->s[$n]->short == FALSE){
+					$S->s[$n]->short = TRUE;
+					$short++;
+				}
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
@@ -195,8 +223,10 @@ $cur = current($S->s[$n]->possible);
 				echo "derp <br>";
 			} 
 			if (sizeof($S->s[$n]->possible) < 3){  //**************edit short definition here x 3
-				$S->s[$n]->short = TRUE;
-				$short++;
+				if ($S->s[$n]->short == FALSE){
+					$S->s[$n]->short = TRUE;
+					$short++;
+				}
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
@@ -255,7 +285,8 @@ function solve($S){
 		}
 		else{
 			$active = FALSE; //end
-			echo "DONE";
+			echo "DONE <br>";
+			printS($S);
 		}
 		
 	}	

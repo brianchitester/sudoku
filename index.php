@@ -53,263 +53,263 @@
 				<tbody>
 					<tr>
 						<td class="g0" id="c00">
-							<input class="s0" size="2" autocomplete="off" name="000" id="000" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="000" id="000" maxlength="1" onkeyup="moveOnMax(this,'100')">
 						</td>
 						<td class="f0" id="c10">
-							<input class="s0" size="2" autocomplete="off" name="100" id="100" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="100" id="100" maxlength="1" onkeyup="moveOnMax(this,'200')">
 						</td>
 						<td class="f0" id="c20">
-							<input class="s0" size="2" autocomplete="off" name="200" id="200" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="200" id="200" maxlength="1" onkeyup="moveOnMax(this,'301')">
 						</td>
 						<td class="g0" id="c30">
-							<input class="s0" size="2" autocomplete="off" name="301" id="301" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="301" id="301" maxlength="1" onkeyup="moveOnMax(this,'401')">
 						</td>
 						<td class="f0" id="c40">
-							<input class="s0" size="2" autocomplete="off" name="401" id="401" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="401" id="401" maxlength="1" onkeyup="moveOnMax(this,'501')">
 						</td>
 						<td class="f0" id="c50">
-							<input class="s0" size="2" autocomplete="off" name="501" id="501" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="501" id="501" maxlength="1" onkeyup="moveOnMax(this,'602')">
 						</td>
 						<td class="g0" id="c60">
-							<input class="s0" size="2" autocomplete="off" name="602" id="602" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="602" id="602" maxlength="1" onkeyup="moveOnMax(this,'702')">
 						</td>
 						<td class="f0" id="c70">
-							<input class="s0" size="2" autocomplete="off" name="702" id="702" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="702" id="702" maxlength="1" onkeyup="moveOnMax(this,'802')">
 						</td>
 						<td class="f0" id="c80">
-							<input class="s0" size="2" autocomplete="off" name="802" id="802" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="802" id="802" maxlength="1" onkeyup="moveOnMax(this,'010')">
 						</td>
 					</tr>
-					<tr>
+					<tr> 
 						<td class="e0" id="c01">
-							<input class="s0" size="2" autocomplete="off" name="010" id="010" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="010" id="010" maxlength="1" onkeyup="moveOnMax(this,'110')">
 						</td>
 						<td class="c0" id="c11">
-							<input class="s0" size="2" autocomplete="off" name="110" id="110" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="110" id="110" maxlength="1" onkeyup="moveOnMax(this,'210')">
 						</td>
 						<td class="c0" id="c21">
-							<input class="s0" size="2" autocomplete="off" name="210" id="210" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="210" id="210" maxlength="1" onkeyup="moveOnMax(this,'311')">
 						</td>
 						<td class="e0" id="c31">
-							<input class="s0" size="2" autocomplete="off" name="311" id="311" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="311" id="311" maxlength="1" onkeyup="moveOnMax(this,'411')">
 						</td>
 						<td class="c0" id="c41">
-							<input class="s0" size="2" autocomplete="off" name="411" id="411" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="411" id="411" maxlength="1" onkeyup="moveOnMax(this,'511')">
 						</td>
 						<td class="c0" id="c51">
-							<input class="s0" size="2" autocomplete="off" name="511" id="511" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="511" id="511" maxlength="1" onkeyup="moveOnMax(this,'612')">
 						</td>
 						<td class="e0" id="c61">
-							<input class="s0" size="2" autocomplete="off" name="612" id="612" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="612" id="612" maxlength="1" onkeyup="moveOnMax(this,'712')">
 						</td>
 						<td class="c0" id="c71">
-							<input class="s0" size="2" autocomplete="off" name="712" id="712" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="712" id="712" maxlength="1" onkeyup="moveOnMax(this,'812')">
 						</td>
 						<td class="c0" id="c81">
-							<input class="s0" size="2" autocomplete="off" name="812" id="812" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="812" id="812" maxlength="1" onkeyup="moveOnMax(this,'020')">
 						</td>
 					</tr>
 					<tr>
 						<td class="e0" id="c02">
-							<input class="s0" size="2" autocomplete="off" name="020" id="020" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="020" id="020" maxlength="1" onkeyup="moveOnMax(this,'120')">
 						</td>
 						<td class="c0" id="c12">
-							<input class="s0" size="2" autocomplete="off" name="120" id="120" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="120" id="120" maxlength="1" onkeyup="moveOnMax(this,'220')">
 						</td>
 						<td class="c0" id="c22">
-							<input class="s0" size="2" autocomplete="off" name="220" id="220" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="220" id="220" maxlength="1" onkeyup="moveOnMax(this,'321')">
 						</td>
 						<td class="e0" id="c32">
-							<input class="s0" size="2" autocomplete="off" name="321" id="321" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="321" id="321" maxlength="1" onkeyup="moveOnMax(this,'421')">
 						</td>
 						<td class="c0" id="c42">
-							<input class="s0" size="2" autocomplete="off" name="421" id="421" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="421" id="421" maxlength="1" onkeyup="moveOnMax(this,'521')">
 						</td>
 						<td class="c0" id="c52">
-							<input class="s0" size="2" autocomplete="off" name="521" id="521" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="521" id="521" maxlength="1" onkeyup="moveOnMax(this,'622')">
 						</td>
 						<td class="e0" id="c62">
-							<input class="s0" size="2" autocomplete="off" name="622" id="622" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="622" id="622" maxlength="1" onkeyup="moveOnMax(this,'722')">
 						</td>
 						<td class="c0" id="c72">
-							<input class="s0" size="2" autocomplete="off" name="722" id="722" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="722" id="722" maxlength="1" onkeyup="moveOnMax(this,'822')">
 						</td>
 						<td class="c0" id="c82">
-							<input class="s0" size="2" autocomplete="off" name="822" id="822" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="822" id="822" maxlength="1" onkeyup="moveOnMax(this,'033')">
 						</td>
 					</tr>
 					<tr>
 						<td class="g0" id="c03">
-							<input class="s0" size="2" autocomplete="off" name="033" id="033" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="033" id="033" maxlength="1" onkeyup="moveOnMax(this,'133')">
 						</td>
 						<td class="f0" id="c13">
-							<input class="s0" size="2" autocomplete="off" name="133" id="133" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="133" id="133" maxlength="1" onkeyup="moveOnMax(this,'233')">
 						</td>
 						<td class="f0" id="c23">
-							<input class="s0" size="2" autocomplete="off" name="233" id="233" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="233" id="233" maxlength="1" onkeyup="moveOnMax(this,'334')">
 						</td>
 						<td class="g0" id="c33">
-							<input class="s0" size="2" autocomplete="off" name="334" id="334" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="334" id="334" maxlength="1" onkeyup="moveOnMax(this,'434')">
 						</td>
 						<td class="f0" id="c43">
-							<input class="s0" size="2" autocomplete="off" name="434" id="434" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="434" id="434" maxlength="1" onkeyup="moveOnMax(this,'534')">
 						</td>
 						<td class="f0" id="c53">
-							<input class="s0" size="2" autocomplete="off" name="534" id="534" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="534" id="534" maxlength="1" onkeyup="moveOnMax(this,'635')">
 						</td>
 						<td class="g0" id="c63">
-							<input class="s0" size="2" autocomplete="off" name="635" id="635" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="635" id="635" maxlength="1" onkeyup="moveOnMax(this,'735')">
 						</td>
 						<td class="f0" id="c73">
-							<input class="s0" size="2" autocomplete="off" name="735" id="735" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="735" id="735" maxlength="1" onkeyup="moveOnMax(this,'835')">
 						</td>
 						<td class="f0" id="c83">
-							<input class="s0" size="2" autocomplete="off" name="835" id="835" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="835" id="835" maxlength="1" onkeyup="moveOnMax(this,'043')">
 						</td>
 						</tr>
 						<tr>
 						<td class="e0" id="c04">
-							<input class="s0" size="2" autocomplete="off" name="043" id="043" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="043" id="043" maxlength="1" onkeyup="moveOnMax(this,'143')">
 						</td>
 						<td class="c0" id="c14">
-							<input class="s0" size="2" autocomplete="off" name="143" id="143" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="143" id="143" maxlength="1" onkeyup="moveOnMax(this,'243')">
 						</td>
 						<td class="c0" id="c24">
-							<input class="s0" size="2" autocomplete="off" name="243" id="243" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="243" id="243" maxlength="1" onkeyup="moveOnMax(this,'344')">
 						</td>
 						<td class="e0" id="c34">
-							<input class="s0" size="2" autocomplete="off" name="344" id="344" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="344" id="344" maxlength="1" onkeyup="moveOnMax(this,'444')">
 						</td>
 						<td class="c0" id="c44">
-							<input class="s0" size="2" autocomplete="off" name="444" id="444" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="444" id="444" maxlength="1" onkeyup="moveOnMax(this,'544')">
 						</td>
 						<td class="c0" id="c54">
-							<input class="s0" size="2" autocomplete="off" name="544" id="544" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="544" id="544" maxlength="1" onkeyup="moveOnMax(this,'645')">
 						</td>
 						<td class="e0" id="c64">
-							<input class="s0" size="2" autocomplete="off" name="645" id="645" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="645" id="645" maxlength="1" onkeyup="moveOnMax(this,'745')">
 						</td>
 						<td class="c0" id="c74">
-							<input class="s0" size="2" autocomplete="off" name="745" id="745" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="745" id="745" maxlength="1" onkeyup="moveOnMax(this,'845')">
 						</td>
 						<td class="c0" id="c84">
-							<input class="s0" size="2" autocomplete="off" name="845" id="845" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="845" id="845" maxlength="1" onkeyup="moveOnMax(this,'053')">
 						</td>
 					</tr>
 					<tr>
 						<td class="e0" id="c05">
-							<input class="s0" size="2" autocomplete="off" name="053" id="053" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="053" id="053" maxlength="1" onkeyup="moveOnMax(this,'153')">
 						</td>
 						<td class="c0" id="c15">
-							<input class="s0" size="2" autocomplete="off" name="153" id="153" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="153" id="153" maxlength="1" onkeyup="moveOnMax(this,'253')">
 						</td>
 						<td class="c0" id="c25">
-							<input class="s0" size="2" autocomplete="off" name="253" id="253" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="253" id="253" maxlength="1" onkeyup="moveOnMax(this,'354')">
 						</td>
 						<td class="e0" id="c35">
-							<input class="s0" size="2" autocomplete="off" name="354" id="354" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="354" id="354" maxlength="1" onkeyup="moveOnMax(this,'454')">
 						</td>
 						<td class="c0" id="c45">
-							<input class="s0" size="2" autocomplete="off" name="454" id="454" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="454" id="454" maxlength="1" onkeyup="moveOnMax(this,'554')">
 						</td>
 						<td class="c0" id="c55">
-							<input class="s0" size="2" autocomplete="off" name="554" id="554" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="554" id="554" maxlength="1" onkeyup="moveOnMax(this,'655')">
 						</td>
 						<td class="e0" id="c65">
-							<input class="s0" size="2" autocomplete="off" name="655" id="655" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="655" id="655" maxlength="1" onkeyup="moveOnMax(this,'755')">
 						</td>
 						<td class="c0" id="c75">
-							<input class="s0" size="2" autocomplete="off" name="755" id="755" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="755" id="755" maxlength="1" onkeyup="moveOnMax(this,'855')">
 						</td>
 						<td class="c0" id="c85">
-							<input class="s0" size="2" autocomplete="off" name="855" id="855" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="855" id="855" maxlength="1" onkeyup="moveOnMax(this,'066')">
 						</td>
 					</tr>
 					<tr>
 						<td class="g0" id="c06">
-							<input class="s0" size="2" autocomplete="off" name="066" id="066" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="066" id="066" maxlength="1" onkeyup="moveOnMax(this,'166')">
 						</td>
 						<td class="f0" id="c16">
-							<input class="s0" size="2" autocomplete="off" name="166" id="166" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="166" id="166" maxlength="1" onkeyup="moveOnMax(this,'266')">
 						</td>
 						<td class="f0" id="c26">
-							<input class="s0" size="2" autocomplete="off" name="266" id="266" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="266" id="266" maxlength="1" onkeyup="moveOnMax(this,'367')">
 						</td>
 						<td class="g0" id="c36">
-							<input class="s0" size="2" autocomplete="off" name="367" id="367" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="367" id="367" maxlength="1" onkeyup="moveOnMax(this,'467')">
 						</td>
 						<td class="f0" id="c46">
-							<input class="s0" size="2" autocomplete="off" name="467" id="467" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="467" id="467" maxlength="1" onkeyup="moveOnMax(this,'567')">
 						</td>
 						<td class="f0" id="c56">
-							<input class="s0" size="2" autocomplete="off" name="567" id="567" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="567" id="567" maxlength="1" onkeyup="moveOnMax(this,'668')">
 						</td>
 						<td class="g0" id="c66">
-							<input class="s0" size="2" autocomplete="off" name="668" id="668" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="668" id="668" maxlength="1" onkeyup="moveOnMax(this,'768')">
 						</td>
 						<td class="f0" id="c76">
-							<input class="s0" size="2" autocomplete="off" name="768" id="768" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="768" id="768" maxlength="1" onkeyup="moveOnMax(this,'868')">
 						</td>
 						<td class="f0" id="c86">
-							<input class="s0" size="2" autocomplete="off" name="868" id="868" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="868" id="868" maxlength="1" onkeyup="moveOnMax(this,'076')">
 						</td>
 					</tr>
 					<tr>
 						<td class="e0" id="c07">
-							<input class="s0" size="2" autocomplete="off" name="076" id="076" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="076" id="076" maxlength="1" onkeyup="moveOnMax(this,'176')">
 						</td>
 						<td class="c0" id="c17">
-							<input class="s0" size="2" autocomplete="off" name="176" id="176" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="176" id="176" maxlength="1" onkeyup="moveOnMax(this,'276')">
 						</td>
 						<td class="c0" id="c27">
-							<input class="s0" size="2" autocomplete="off" name="276" id="276" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="276" id="276" maxlength="1" onkeyup="moveOnMax(this,'377')">
 						</td>
 						<td class="e0" id="c37">
-							<input class="s0" size="2" autocomplete="off" name="377" id="377" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="377" id="377" maxlength="1" onkeyup="moveOnMax(this,'477')">
 						</td>
 						<td class="c0" id="c47">
-							<input class="s0" size="2" autocomplete="off" name="477" id="477" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="477" id="477" maxlength="1" onkeyup="moveOnMax(this,'577')">
 						</td>
 						<td class="c0" id="c57">
-							<input class="s0" size="2" autocomplete="off" name="577" id="577" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="577" id="577" maxlength="1" onkeyup="moveOnMax(this,'678')">
 						</td>
 						<td class="e0" id="c67">
-							<input class="s0" size="2" autocomplete="off" name="678" id="678" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="678" id="678" maxlength="1" onkeyup="moveOnMax(this,'778')">
 						</td>
 						<td class="c0" id="c77">
-							<input class="s0" size="2" autocomplete="off" name="778" id="778" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="778" id="778" maxlength="1" onkeyup="moveOnMax(this,'878')">
 						</td>
 						<td class="c0" id="c87">
-							<input class="s0" size="2" autocomplete="off" name="878" id="878" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="878" id="878" maxlength="1" onkeyup="moveOnMax(this,'086')">
 						</td>
 					</tr>
 					<tr>
 						<td class="i0" id="c08">
-							<input class="s0" size="2" autocomplete="off" name="086" id="086" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="086" id="086" maxlength="1" onkeyup="moveOnMax(this,'186')">
 						</td>
 						<td class="h0" id="c18">
-							<input class="s0" size="2" autocomplete="off" name="186" id="186" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="186" id="186" maxlength="1" onkeyup="moveOnMax(this,'286')">
 						</td>
 						<td class="h0" id="c28">
-							<input class="s0" size="2" autocomplete="off" name="286" id="286" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="286" id="286" maxlength="1" onkeyup="moveOnMax(this,'387')">
 						</td>
 						<td class="i0" id="c38">
-							<input class="s0" size="2" autocomplete="off" name="387" id="387" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="387" id="387" maxlength="1" onkeyup="moveOnMax(this,'487')">
 						</td>
 						<td class="h0" id="c48">
-							<input class="s0" size="2" autocomplete="off" name="487" id="487" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="487" id="487" maxlength="1" onkeyup="moveOnMax(this,'587')">
 						</td>
 						<td class="h0" id="c58">
-							<input class="s0" size="2" autocomplete="off" name="587" id="587" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="587" id="587" maxlength="1" onkeyup="moveOnMax(this,'688')">
 						</td>
 						<td class="i0" id="c68">
-							<input class="s0" size="2" autocomplete="off" name="688" id="688" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="688" id="688" maxlength="1" onkeyup="moveOnMax(this,'788')">
 						</td>
 						<td class="h0" id="c78">
-							<input class="s0" size="2" autocomplete="off" name="788" id="788" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="788" id="788" maxlength="1" onkeyup="moveOnMax(this,'888')">
 						</td>
 						<td class="h0" id="c88">
-							<input class="s0" size="2" autocomplete="off" name="888" id="888" maxlength="1">
+							<input class="s0" size="2" autocomplete="off" name="888" id="888" maxlength="1" onkeyup="moveOnMax(this,'000')">
 						</td>
 					</tr>
 				</tbody>
@@ -329,10 +329,8 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
-
-  <!-- scripts concatenated and minified via build script -->
-  <script defer src="js/libs/bootstrap.min.js"></script>
-  <script defer src="js/script.js"></script>
+  <script src="js/libs/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
   <!-- end scripts -->
 
 
