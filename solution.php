@@ -43,12 +43,12 @@ class Sudoku
 
 class Vertex{
 		public $value = 0;
-		public $sindex = 0;
+		public $sindex = 0;  //index in main array
     public $short = FALSE;
     public $x = 0;
 		public $y = 0;
 		public $z = 0;
-		public $xyzlocks = [
+		public $xyzlocks = [ //currently not used
 			"x lock" => FALSE,
 			"y lock" => FALSE,
 			"z lock" => FALSE,
@@ -58,6 +58,7 @@ class Vertex{
 		];
 }
 
+//print the puzzle
 function printS($S){
 	$i = 0;
 	$count = 0;
@@ -73,6 +74,7 @@ function printS($S){
 	}
 }
 
+//get z coordinate
 function getZ($x, $y){
 	if ($y < 3){
 		if ($x < 3){
@@ -125,7 +127,8 @@ function init($S){
 
 			//if value is set
 			if (isset ($_POST[$name])){
-				$val = (is_numeric($_POST[$name]) ? (int)$_POST[$name] : 0); //convert to int
+				$val = (is_numeric($_POST[$name]) ? (int)$_POST[$name] : 0); //check input and convert to int
+				//ignor invalid input
 				if($val > 0 && $val < 10){
 					$V->value = $val;
 					$V->possible = array($V->value);
@@ -190,13 +193,14 @@ function checkNeighbors($S, $V){
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
-					if(!in_array($V->sindex, $S->locked)){
-						array_push($S->locked, $V->sindex);
+					if(!in_array($n, $S->locked)){
+						array_push($S->locked, $n);
 						$hit++;
 					}
 				}
 			}
 		}
+
 		//check y
 		echo "y check <br/>";
 		foreach($S->y[$V->y] as $n){
@@ -215,8 +219,8 @@ function checkNeighbors($S, $V){
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
-					if(!in_array($V->sindex, $S->locked)){
-						array_push($S->locked, $V->sindex);
+					if(!in_array($n, $S->locked)){
+						array_push($S->locked, $n);
 						$hit++;
 					}
 				}
@@ -241,8 +245,8 @@ function checkNeighbors($S, $V){
 				if (sizeof($S->s[$n]->possible) == 1){ //gotcha!
 					reset($S->s[$n]->possible);
 					$S->s[$n]->value = current($S->s[$n]->possible);
-					if(!in_array($V->sindex, $S->locked)){
-						array_push($S->locked, $V->sindex);
+					if(!in_array($n, $S->locked)){
+						array_push($S->locked, $n);
 						$hit++;
 					}
 				}
@@ -261,26 +265,25 @@ function solve($S){
 	$i = 0;
 	$totalhit = sizeof($S->locked)-1;
 	$totalshort = sizeof($S->locked)-1;
+	$rounds = 0;
 
 	while($active){
 		//set $V to each locked vertex
-		$V = $S->s[$S->locked[$i]];
+		$x = $S->locked[$i];
+		$V = $S->s[$x];
 		$numlocked = sizeof($S->locked)-1;
 		echo "<h1>$numlocked</h1>";
-		
 		
 		$hitshort = checkNeighbors($S, $V); //number of $Vs locked "hit" and number of $Vs shorted
 		$totalhit += $hitshort[0];
 		$totalshort += $hitshort[1];
 
-		/*debugging code
 		echo "i: $i <br>";
 		echo "hit: $hitshort[0] <br>";
 		echo "short: $hitshort[1] <br>";
 		echo "totalhit: $totalhit <br>";
 		echo "totalshort: $totalshort <br>";
 		echo "<br>";
-		*/
 
 		//from this, we should be able to determine a "hit score" and "short score", as we progress through the
 		//need to compile all echo data into graphical output
@@ -288,17 +291,16 @@ function solve($S){
 		//total short must have some threshold where backtracking becomes necesary
 		//at this point, we have the check neighbors infinitely algo which should work on its own
 		//we need to wrap up this code and thest if checkneighbors is enough to solve the sudoku
-
-		//html output:
 		
 		if ($i == 12){
 			printS($S);
 		}
 
 		//reset conditions
-		if($i < 30){
+		if($i < 80){
 			if( $i == sizeof($S->locked)-1){
 				$i=0;
+				$rounds++;
 			}
 			else{
 				$i++;
@@ -308,6 +310,11 @@ function solve($S){
 			$active = FALSE; //end
 			echo "DONE <br>";
 			printS($S);
+		}
+		if($rounds > 50){
+			$active = FALSE; //end
+			echo "DONE <br>";
+			printS($S);			
 		}
 	}	
 }
