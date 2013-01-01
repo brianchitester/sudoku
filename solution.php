@@ -311,6 +311,8 @@ function solve($S){
 			echo "DONE <br>";
 			printS($S);
 		}
+
+		//avoid infinite loops
 		if($rounds > 50){
 			$active = FALSE; //end
 			echo "DONE <br>";
